@@ -3,8 +3,6 @@ import requests
 from PIL import Image
 import streamlit as st
 from streamlit_lottie import st_lottie
-st.title("Test Streamlit-Lottie")
-streamlit run test_streamlit_lottie.py
 import random
 
 st.set_page_config(page_title="Cole's Data Scientist Portfolio", layout="wide")
