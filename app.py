@@ -2,6 +2,7 @@ import os
 import requests
 from PIL import Image
 import streamlit as st
+import streamlit_lottie
 from streamlit_lottie import st_lottie
 import random
 
@@ -37,7 +38,7 @@ else:
     print("Failed to load lottie animation")
 
 # --- Load Image ---
-file_path = r"/Users/colepetty/Desktop/Python Portfolio Website/images/Screen Shot 2024-08-06 at 12.32.44 PM.png"
+file_path = r"/Users/colepetty/Desktop/Python Portfolio Website/images/websiteimage1.png"
 if os.path.exists(file_path):
     img_contact_form = Image.open(file_path)
 else:
