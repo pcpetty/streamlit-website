@@ -2,7 +2,7 @@ import os
 import requests
 from PIL import Image
 import streamlit as st
-from streamlit_lottie import st_lottie
+import st_lottie
 import random
 
 st.set_page_config(page_title="Cole's Data Scientist Portfolio", layout="wide")
