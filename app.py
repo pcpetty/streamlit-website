@@ -1,7 +1,7 @@
 import os
 import requests
 from PIL import Image
-# import streamlit as st
+import streamlit as st
 # from streamlit import st_lottie
 import random
 
