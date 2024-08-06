@@ -1,7 +1,8 @@
 import os
 import requests
 from PIL import Image
-import streamlit as st
+# import streamlit as st
+# from streamlit import st_lottie
 import random
 
 st.set_page_config(page_title="Cole's Data Scientist Portfolio", layout="wide")
@@ -17,23 +18,23 @@ def local_css(file_name):
 local_css("/Users/colepetty/Desktop/Python Portfolio Website/website_style/style.css")
 
 # --- Load Assets ---
-def load_lottieurl(url: str):
-    try:
-        r = requests.get(url)
-        r.raise_for_status()  # Raise an exception for HTTP errors
-        return r.json()
-    except requests.exceptions.RequestException as e:
-        print(f"Request failed: {e}")
-    except ValueError:
-        print("Failed to parse JSON response")
-    return None
+# def load_lottieurl(url: str):
+#     try:
+#         r = requests.get(url)
+#         r.raise_for_status()  # Raise an exception for HTTP errors
+#         return r.json()
+#     except requests.exceptions.RequestException as e:
+#         print(f"Request failed: {e}")
+#     except ValueError:
+#         print("Failed to parse JSON response")
+#     return None
 
-lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a35804ce4/f89ZcyMIr8.json")
-if lottie_coding:
-    # Proceed with processing the lottie animation
-    pass
-else:
-    print("Failed to load lottie animation")
+# lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a35804ce4/f89ZcyMIr8.json")
+# if lottie_coding:
+#     # Proceed with processing the lottie animation
+#     pass
+# else:
+#     print("Failed to load lottie animation")
 
 # --- Load Image ---
 file_path = r"/Users/colepetty/Desktop/Python Portfolio Website/images/websiteimage1.png"
@@ -86,8 +87,8 @@ with st.container():
         st.write("Highlights")
 
     # Lottie Files on right column lottiefiles.com
-    with right_column:
-        st_lottie(lottie_coding, height=300, key="")
+    # with right_column:
+    #     st_lottie(lottie_coding, height=300, key="")
 
 # --- Projects ---
 with st.container():
