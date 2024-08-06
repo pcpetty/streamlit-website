@@ -2,7 +2,7 @@ import os
 import requests
 from PIL import Image
 import streamlit as st
-import streamlit_lottie
+!pip install streamlit-lottie
 from streamlit_lottie import st_lottie
 import random
 
