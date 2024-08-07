@@ -137,5 +137,3 @@ with st.container():
     """
     st.markdown(contact_form, unsafe_allow_html=True)
 
-    if img_contact_form:
-        st.image(img_contact_form, width=300)
