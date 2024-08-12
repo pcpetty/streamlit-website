@@ -136,3 +136,7 @@ with st.container():
     </form>
     """
     st.markdown(contact_form, unsafe_allow_html=True)
+    st.markdown(
+    '<link rel="stylesheet" type="text/css" href="website_style/style.css">',
+    unsafe_allow_html=True
+)
