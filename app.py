@@ -189,7 +189,6 @@ with st.container():
 
 # --- Magic 8 Ball Section ---
 st.write("---")
-st.markdown('</div>', unsafe_allow_html=True)
 st.header("Magic 8 Ball")
 st.write("Ask the Magic 8 Ball a question and see what it predicts!")
 
@@ -197,7 +196,6 @@ question = st.text_input("Your question:")
 if st.button("Ask the Magic 8 Ball"):
     answer = magic_8_ball()
     st.write(f"🎱 Magic 8 Ball says: **{answer}**")
-st.markdown('</div>', unsafe_allow_html=True)
 
 # --- Resume Section Master ---
 # Custom CSS for styling
