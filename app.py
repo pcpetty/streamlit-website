@@ -76,7 +76,7 @@ def magic_8_ball():
 with st.container():
     st.subheader("Welcome!")
     st.title("Hi, I'm Cole, A Data Scientist From Columbus")
-    st.write("I am passionate about using Python and Machine Learning to be more effective in business settings.")
+    st.write("Based in Columbus, OH, I bring a unique blend of analytical skills, operational expertise, and a passion for technology-driven solutions. With a strong background in safety management and operations, I have successfully streamlined processes to enhance efficiency and reduce costs in high-pressure environments. My experience spans across managing fleet compliance, optimizing warehousing systems, and leading teams to achieve strategic goals. With a dual degree in Business Administration and Psychology, I combine technical acumen with a deep understanding of organizational behavior, driving impactful results in every project I undertake. Let's connect and explore how data and technology can transform business operations.")
     st.write("[Check out my portfolio projects! >](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
 
 # --- What I Do ---
