@@ -74,6 +74,11 @@ st.markdown("""
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+    }
+    /* Magic 8 Ball Section */
+    .magic-8-ball-section h2, .magic-8-ball-section p {
+        color: #ffffff;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -147,7 +152,7 @@ with st.container():
     st.subheader("Welcome!")
     st.title("Hi, I'm Cole, A Data Scientist From Columbus")
     st.write("Based in Columbus, OH, I bring a unique blend of analytical skills, operational expertise, and a passion for technology-driven solutions. With a strong background in safety management and operations, I have successfully streamlined processes to enhance efficiency and reduce costs in high-pressure environments. My experience spans across managing fleet compliance, optimizing warehousing systems, and leading teams to achieve strategic goals. With a dual degree in Business Administration and Psychology, I combine technical acumen with a deep understanding of organizational behavior, driving impactful results in every project I undertake. Let's connect and explore how data and technology can transform business operations.")
-    st.write("[Check out my portfolio projects! >](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
+    st.write("[Check out my portfolio projects!](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
 
 # --- What I Do ---
 with st.container():
@@ -186,7 +191,7 @@ with st.container():
     This project demonstrates my ability to apply machine learning techniques to solve real-world problems effectively.
     """)
 
-    st.markdown("[View Project on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git")
+    st.markdown("[View on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
 
 # --- Magic 8 Ball Section ---
 st.write("---")
