@@ -7,6 +7,51 @@ import matplotlib.pyplot as plt
 from streamlit_lottie import st_lottie
 import random
 
+# --- Clean Code ---
+
+def clean_code(code):
+    """
+    Cleans the provided code by replacing non-Python artifacts
+    and making it valid Python code.
+    
+    Args:
+        code (str): The raw code string.
+    
+    Returns:
+        str: The cleaned code.
+    """
+    # Replace `null` with `None`
+    code = code.replace('null', 'None')
+    
+    # Remove notebook artifacts like execution_count
+    lines = code.splitlines()
+    cleaned_lines = []
+    for line in lines:
+        # Skip lines that are notebook metadata
+        if '"execution_count":' in line:
+            continue
+        cleaned_lines.append(line)
+    
+    # Join the cleaned lines back into a single string
+    cleaned_code = '\n'.join(cleaned_lines)
+    
+    return cleaned_code
+
+# Example usage
+raw_code = """
+def example_function():
+    # Some example code with a mistake
+    "execution_count": null,
+    print("Hello, World!")
+"""
+
+cleaned_code = clean_code(raw_code)
+print(cleaned_code)
+
+exec(cleaned_code)
+
+# ----
+
 st.set_page_config(page_title="Cole's Data Scientist Portfolio", layout="wide")
 
 # --- Load CSS ---
