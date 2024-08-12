@@ -15,42 +15,36 @@ def local_css(file_name):
         with open(file_name) as f:
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
     except FileNotFoundError:
-        st.error(f"File not found: {file_name}")
+        print(f"File not found: {file_name}")
 
 local_css("/Users/colepetty/Desktop/Python Portfolio Website/website_style/style.css")
 
-# --- Load Lottie Animation ---
+# --- Load Assets ---
 def load_lottieurl(url: str):
     try:
         r = requests.get(url)
         r.raise_for_status()  # Raise an exception for HTTP errors
         return r.json()
     except requests.exceptions.RequestException as e:
-        st.error(f"Request failed: {e}")
-        return None
+        print(f"Request failed: {e}")
+    except ValueError:
+        print("Failed to parse JSON response")
+    return None
 
 lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a35804ce4/f89ZcyMIr8.json")
+if lottie_coding:
+    # Proceed with processing the lottie animation
+    pass
+else:
+    print("Failed to load lottie animation")
 
 # --- Load Image ---
-# Path to your image file
-file_path = r"/Users/colepetty/Desktop/Python Portfolio Website/images/websiteimage1.png"  # Update with the correct path
-
-# Check if the image file exists and load it
+file_path = r"/Users/colepetty/Desktop/Python Portfolio Website/images/websiteimage1.png"
 if os.path.exists(file_path):
-    try:
-        img_contact_form = Image.open(file_path)
-    except Exception as e:
-        st.error(f"Error loading image: {e}")
-        img_contact_form = None
+    img_contact_form = Image.open(file_path)
 else:
-    st.error(f"File not found: {file_path}")
-    img_contact_form = None  # Ensure it's defined as None if the file isn't found
-
-# Use the image in your Streamlit app
-if img_contact_form:
-    st.image(img_contact_form, caption="Contact Form Image", use_column_width=True)
-else:
-    st.write("Image not available")
+    print(f"File not found: {file_path}")
+    img_contact_form = None  # Define as None if not found
 
 # --- Define Magic 8 Ball Function ---
 def magic_8_ball():
@@ -96,10 +90,7 @@ with st.container():
 
     # Lottie Files on right column lottiefiles.com
     with right_column:
-        if lottie_coding:
-            st_lottie(lottie_coding, height=300, key="")
-        else:
-            st.error("Failed to load Lottie animation")
+        st_lottie(lottie_coding, height=300, key="")
 
 # --- Projects ---
 with st.container():
@@ -113,18 +104,13 @@ with st.container():
         else:
             st.write("Image not available")
     with text_column:
-        st.subheader("Global EV Sales Data Analysis")
-        st.image("insert_image_url_here", caption="EV Sales Analysis", use_column_width=True)
-        st.write("""
-        Developed a comprehensive data analysis project focused on electric vehicle (EV) sales and market trends. Utilized Python, Pandas, and Seaborn to filter, clean, and visualize data. Key achievements include:
-        """)
-        st.markdown("""
-        - **Dynamic Visualizations:** Created interactive visualizations to track EV sales growth and market share by region.
-        - **Advanced Data Cleaning:** Implemented sophisticated data cleaning techniques to handle missing values and standardize data formats.
-        - **Trend Analysis:** Analyzed correlations between EV stock share and sales share, uncovering critical trends and insights.
-        - **Streamlit Deployment:** Deployed the project on Streamlit, making the analysis interactive and accessible.
-        """)
-        st.markdown("[View on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
+        st.subheader("Hurricane Analysis in Python")
+        st.write(
+            """
+            Analyzing Hurricane Severity
+            """
+        )
+        st.markdown("[Code](https://github.com/pcpetty/Data-Analyst-Portfolio.git)")
 
 # --- Magic 8 Ball Section ---
 st.write("---")
@@ -135,6 +121,7 @@ question = st.text_input("Your question:")
 if st.button("Ask the Magic 8 Ball"):
     answer = magic_8_ball()
     st.write(f"🎱 Magic 8 Ball says: **{answer}**")
+
 
 # --- Resume Section Master ---
 # Custom CSS for styling
