@@ -7,6 +7,77 @@ import matplotlib.pyplot as plt
 from streamlit_lottie import st_lottie
 import random
 
+# --- CSS THEME
+st.markdown("""
+    <style>
+    /* General Theme */
+    body {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .stApp {
+        background-color: #1e1e1e;
+    }
+    /* Headers */
+    h1, h2, h3, h4, h5, h6 {
+        color: #f5a623;
+        font-weight: 700;
+    }
+    /* Text */
+    p, li {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #d3d3d3;
+    }
+    /* Links */
+    a {
+        color: #f5a623;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    /* Buttons */
+    .stButton>button {
+        background-color: #f5a623;
+        color: #1e1e1e;
+        border-radius: 10px;
+        border: none;
+        padding: 10px 20px;
+    }
+    .stButton>button:hover {
+        background-color: #d48c20;
+        color: #ffffff;
+    }
+    /* Containers */
+    .stContainer {
+        background-color: #2b2b2b;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    /* Input Fields */
+    input, textarea {
+        background-color: #2b2b2b;
+        color: #f5a623;
+        border: 1px solid #f5a623;
+        border-radius: 5px;
+    }
+    input::placeholder, textarea::placeholder {
+        color: #f5a623;
+    }
+    /* Images */
+    .stImage {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
+# ---
+
 st.set_page_config(page_title="Cole's Data Scientist Portfolio", layout="wide")
 
 # --- Load CSS ---
@@ -115,7 +186,6 @@ with st.container():
     
     This project demonstrates my ability to apply machine learning techniques to solve real-world problems effectively.
     """)
-    st.image("path_to_your_project_image.png", caption="Income Classification using Logistic Regression", use_column_width=True)
 
     st.markdown("[View Project on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git")
 
