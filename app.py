@@ -2,6 +2,8 @@ import os
 import requests
 from PIL import Image
 import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
 from streamlit_lottie import st_lottie
 import random
 
