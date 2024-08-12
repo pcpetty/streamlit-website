@@ -100,25 +100,24 @@ with st.container():
     with right_column:
         st_lottie(lottie_coding, height=300, key="")
 
-# --- Projects ---
+## --- Projects ---
 with st.container():
-    st.write("---")
-    st.header("My Projects")
-    st.write("##")
-    image_column, text_column = st.columns((1, 2))
-    with image_column:
-        if img_contact_form:
-            st.image(img_contact_form)
-        else:
-            st.write("Image not available")
-    with text_column:
-        st.subheader("Hurricane Analysis in Python")
-        st.write(
-            """
-            Analyzing Hurricane Severity
-            """
-        )
-        st.markdown("[Code](https://github.com/pcpetty/Data-Analyst-Portfolio.git)")
+    st.markdown("## 🌟 Machine Learning Project: Income Classification using Logistic Regression")
+    st.write("""
+    This project focuses on predicting whether an individual's income exceeds $50K per year using Logistic Regression.
+    The dataset used is the Census Income dataset from the UCI Machine Learning Repository.
+    
+    **Key Highlights:**
+    - **Data Preprocessing:** Implemented techniques to clean and prepare the data for model training.
+    - **Feature Engineering:** Extracted relevant features to improve model accuracy.
+    - **Model Training:** Utilized Logistic Regression to classify income levels with high accuracy.
+    - **Model Evaluation:** Assessed the model performance using accuracy, precision, recall, and F1 score.
+    
+    This project demonstrates my ability to apply machine learning techniques to solve real-world problems effectively.
+    """)
+    st.image("path_to_your_project_image.png", caption="Income Classification using Logistic Regression", use_column_width=True)
+
+    st.markdown("[View Project on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git")
 
 # --- Magic 8 Ball Section ---
 st.write("---")
@@ -299,3 +298,71 @@ with st.container():
         """,
         unsafe_allow_html=True
     )
+
+# --- CSS Theme Injection ---
+st.markdown("""
+    <style>
+    /* General Theme */
+    body {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .stApp {
+        background-color: #1e1e1e;
+    }
+    /* Headers */
+    h1, h2, h3, h4, h5, h6 {
+        color: #f5a623;
+        font-weight: 700;
+    }
+    /* Text */
+    p, li {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #d3d3d3;
+    }
+    /* Links */
+    a {
+        color: #f5a623;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    /* Buttons */
+    .stButton>button {
+        background-color: #f5a623;
+        color: #1e1e1e;
+        border-radius: 10px;
+        border: none;
+        padding: 10px 20px;
+    }
+    .stButton>button:hover {
+        background-color: #d48c20;
+        color: #ffffff;
+    }
+    /* Containers */
+    .stContainer {
+        background-color: #2b2b2b;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    /* Input Fields */
+    input, textarea {
+        background-color: #2b2b2b;
+        color: #f5a623;
+        border: 1px solid #f5a623;
+        border-radius: 5px;
+    }
+    input::placeholder, textarea::placeholder {
+        color: #f5a623;
+    }
+    /* Images */
+    .stImage {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    </style>
+""", unsafe_allow_html=True)
