@@ -136,7 +136,40 @@ with st.container():
     </form>
     """
     st.markdown(contact_form, unsafe_allow_html=True)
+
+    # CSS for styling the form
     st.markdown(
-    '<link rel="stylesheet" type="text/css" href="website_style/style.css">',
-    unsafe_allow_html=True
-)
+        """
+        <style>
+        input[type=message], input[type=email], input[type=text], textarea {
+          width: 100%; /* Full width */
+          padding: 12px; /* Some padding */ 
+          border: 1px solid #ccc; /* Gray border */
+          border-radius: 4px; /* Rounded borders */
+          box-sizing: border-box; /* Make sure that padding and width stays in place */
+          margin-top: 6px; /* Add a top margin */
+          margin-bottom: 16px; /* Bottom margin */
+          resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
+
+        button[type=submit] {
+          background-color: #04AA6D;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        button[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        /* Hide Streamlit Branding */
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
