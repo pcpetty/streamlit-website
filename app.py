@@ -104,13 +104,26 @@ with st.container():
         else:
             st.write("Image not available")
     with text_column:
-        st.subheader("Hurricane Analysis in Python")
-        st.write(
-            """
-            Analyzing Hurricane Severity
-            """
-        )
-        st.markdown("[Code](https://github.com/pcpetty/Data-Analyst-Portfolio.git)")
+        # Global EV Sales Data Analysis
+    st.subheader("Global EV Sales Data Analysis")
+
+# Add an image (replace with your actual image URL or local path)
+    st.image("insert_image_url_here", caption="EV Sales Analysis", use_column_width=True)
+        # Project description
+    st.write("""
+    Developed a comprehensive data analysis project focused on electric vehicle (EV) sales and market trends. Utilized Python, Pandas, and Seaborn to filter, clean, and visualize data. Key achievements include:
+    """)
+
+# Key achievements
+    st.markdown("""
+    - **Dynamic Visualizations:** Created interactive visualizations to track EV sales growth and market share by region.
+    - **Advanced Data Cleaning:** Implemented sophisticated data cleaning techniques to handle missing values and standardize data formats.
+    - **Trend Analysis:** Analyzed correlations between EV stock share and sales share, uncovering critical trends and insights.
+    - **Streamlit Deployment:** Deployed the project on Streamlit, making the analysis interactive and accessible.
+    """)
+
+    # GitHub link
+    st.markdown("[View on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
 
 # --- Magic 8 Ball Section ---
 st.write("---")
