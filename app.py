@@ -32,12 +32,11 @@ def load_lottieurl(url: str):
 lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a35804ce4/f89ZcyMIr8.json")
 
 # --- Load Image ---
-file_path = r"/Users/colepetty/Desktop/Python Portfolio Website/images/websiteimage1.png"
-if os.path.exists(file_path):
-    img_contact_form = Image.open(file_path)
+image_path = "/path/to/your/image.png"  # Replace with your actual image path or URL
+if os.path.exists(image_path):
+    st.image(image_path, caption="EV Sales Analysis", use_column_width=True)
 else:
-    st.error(f"File not found: {file_path}")
-    img_contact_form = None  # Set to None if not found
+    st.error(f"File not found: {image_path}")
 
 # --- Define Magic 8 Ball Function ---
 def magic_8_ball():
