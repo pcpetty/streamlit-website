@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 from streamlit_lottie import st_lottie
 import random
 
+st.set_page_config(page_title="Cole's Data Scientist Portfolio", layout="wide")
+
 # --- CSS THEME
 st.markdown("""
     <style>
@@ -75,10 +77,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
 # ---
-
-st.set_page_config(page_title="Cole's Data Scientist Portfolio", layout="wide")
 
 # --- Load CSS ---
 def local_css(file_name):
