@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Desktop/streamlit_website/images"
+		},
+		{
+			"path": "../Desktop/streamlit_website/streamlit"
+		},
+		{
+			"path": "../Desktop/streamlit_website/venv"
+		},
+		{
+			"path": "../Desktop/streamlit_website/website_style"
+		}
+	],
+	"settings": {}
+}
