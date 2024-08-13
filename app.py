@@ -233,11 +233,12 @@ st.markdown("""
 The pie chart above represents the distribution of species across various conservation statuses in the dataset. 
 Each slice of the pie corresponds to a different conservation status, with the percentage indicating the proportion of species in that status relative to the total number of species in the dataset. 
 """)
-
+st.markdown("""
 For example:
 - **Endangered:** If the chart shows 10%, it means that 10% of all species in the dataset are classified as endangered.
 - **Threatened:** If the chart shows 15%, it means that 15% of all species in the dataset are classified as threatened.
 - **No Intervention:** The largest slice typically represents species not currently under any specific conservation status.
+""")
 st.markdown("""
 These percentages help visualize how conservation efforts are distributed across different species and highlight areas where more attention might be needed.
 """)
