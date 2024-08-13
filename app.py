@@ -238,11 +238,12 @@ For example:
 - **Endangered:** If the chart shows 10%, it means that 10% of all species in the dataset are classified as endangered.
 - **Threatened:** If the chart shows 15%, it means that 15% of all species in the dataset are classified as threatened.
 - **No Intervention:** The largest slice typically represents species not currently under any specific conservation status.
-
+st.markdown("""
 These percentages help visualize how conservation efforts are distributed across different species and highlight areas where more attention might be needed.
 """)
 
 # Identify threatened species
+
 threatened_species_df = species_df[species_df['conservation_status'].isin(['Endangered', 'Threatened'])]
 
 # Merge with observations to get location data
