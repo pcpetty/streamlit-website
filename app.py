@@ -9,9 +9,20 @@ from mpl_toolkits.mplot3d import Axes3D
 from streamlit_lottie import st_lottie
 import random
 
+import os
+import requests
+from PIL import Image
+import streamlit as st
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+from streamlit_lottie import st_lottie
+import random
+
+# Setting the Streamlit page configuration
 st.set_page_config(page_title="Cole's Data Scientist Portfolio", layout="wide")
 
-# --- CSS THEME
+# --- CSS THEME ---
 st.markdown("""
     <style>
     /* General Theme */
