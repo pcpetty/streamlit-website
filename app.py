@@ -203,32 +203,41 @@ def load_data():
     observations_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/observations.csv'
     return pd.read_csv(species_url), pd.read_csv(observations_url)
 
+# Load the data
 species_df, observations_df = load_data()
 
-# Display Data
+# Display Raw Data (Optional)
 if st.checkbox("Show Raw Data"):
+    st.write("Species DataFrame:")
     st.write(species_df)
+    st.write("Observations DataFrame:")
     st.write(observations_df)
 
-# Visualizations
+# Visualizations Section
 st.subheader("Visualizations")
-if st.checkbox("Show Conservation Status Proportions"):
-    conservation_proportion = species_df['conservation_status'].value_counts()
-    plt.figure(figsize=(10, 10))
-    plt.pie(plt.pie(
+
+# Calculate the conservation status proportions
+conservation_proportion = species_df['conservation_status'].value_counts()
+
+# Ensure the data is in the correct format (numeric) for plotting
+conservation_proportion = conservation_proportion.astype(float)
+
+# Plot the pie chart with labels
+plt.figure(figsize=(10, 10))
+plt.pie(
     conservation_proportion,
-    labels=conservation_proportion.index,
+    labels=conservation_proportion.index,  # Add labels to the slices
     autopct='%1.1f%%',
     startangle=140,
-    colors=sns.color_palette('pastel'),
-    labeldistance=1.1  # Adjust this value as needed
+    colors=sns.color_palette('pastel')
 )
-)
-    plt.title('Proportion of Conservation Statuses Across All Species')
-    st.pyplot(plt)
+plt.title('Proportion of Conservation Statuses Across All Species')
 
-# Add more visualizations and model sections as needed
+# Use Streamlit's plot display
+st.pyplot(plt)
 
+# Additional Visualizations (Placeholder)
+# st.write("Add more visualizations here...")
 # Footer
 st.markdown("### Project by [Cole Petty](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
 # ---
