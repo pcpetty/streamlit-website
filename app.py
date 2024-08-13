@@ -211,11 +211,13 @@ if st.checkbox("Show Raw Data"):
 # Visualizations Section
 st.subheader("Visualizations")
 
-# Calculate the conservation status proportions
-conservation_proportion = species_df['conservation_status'].value_counts().astype(float)
+# Toggle to display pie chart
+if st.checkbox("Show Conservation Status Pie Chart"):
+    # Calculate the conservation status proportions
+    conservation_proportion = species_df['conservation_status'].value_counts().astype(float)
 
-# Define a custom color palette to match the orange and black theme
-color_palette = sns.color_palette(['#FF7F0E', '#2E2E2E', '#FFA07A', '#D3D3D3', '#000000'])
+    # Define a custom color palette to match the orange and black theme
+    color_palette = sns.color_palette(['#FF7F0E', '#2E2E2E', '#FFA07A', '#D3D3D3', '#000000'])
 
 # Plot the 2D pie chart with labels
 fig, ax = plt.subplots(figsize=(6, 6))  # Adjusted figure size for better layout
