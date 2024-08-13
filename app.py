@@ -215,7 +215,15 @@ st.subheader("Visualizations")
 if st.checkbox("Show Conservation Status Proportions"):
     conservation_proportion = species_df['conservation_status'].value_counts()
     plt.figure(figsize=(10, 10))
-    plt.pie(conservation_proportion, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
+    plt.pie(plt.pie(
+    conservation_proportion,
+    labels=conservation_proportion.index,
+    autopct='%1.1f%%',
+    startangle=140,
+    colors=sns.color_palette('pastel'),
+    labeldistance=1.1  # Adjust this value as needed
+)
+)
     plt.title('Proportion of Conservation Statuses Across All Species')
     st.pyplot(plt)
 
