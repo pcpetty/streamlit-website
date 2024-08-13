@@ -307,6 +307,7 @@ if st.button("Ask the Magic 8 Ball"):
     st.write(f"🎱 Magic 8 Ball says: **{answer}**")
 
 # --- Resume Section Master ---
+# --- Resume Section Master ---
 # Custom CSS for styling
 st.markdown("""
     <style>
@@ -432,11 +433,8 @@ st.markdown("""
             <li>Data Scientist: Analytics — Codecademy (Jun 2024) | Credential ID: 66730BDA89 | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
             <li>Learn Microsoft Excel for Data Analysis — Codecademy (Aug 2024) | Credential ID: 66B3B4DDDC | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
             <li>Learn Python 3 — Codecademy (Jun 2024) | Credential ID: 66803CD763 | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
-            <li>OSHA 10-Hour & 30-Hour Training — 360training (Jul 2023) | Credential IDs: 26-707446395, 26-907460874 | <a href="https://www.360training.com" target="_blank">View Credential</a></li>
-        </ul>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+            <li>OSHA 10-Hour & 
+
 
 # --- Contact Section ---
 with st.container():
