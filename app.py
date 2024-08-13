@@ -232,15 +232,25 @@ plt.pie(
     colors=sns.color_palette('pastel')
 )
 plt.title('Proportion of Conservation Statuses Across All Species')
-
-# Use Streamlit's plot display
 st.pyplot(plt)
+
+# Identify threatened species
+threatened_species_df = species_df[species_df['conservation_status'].isin(['Endangered', 'Threatened'])]
+
+# Merge with observations to get location data
+threatened_species_with_location = pd.merge(threatened_species_df, observations_df, on='scientific_name')
+
+# Display threatened species and their locations
+st.subheader("List of Threatened Species and Their Locations")
+st.dataframe(threatened_species_with_location[['common_names', 'scientific_name', 'category', 'conservation_status', 'park_name', 'observations']])
+
+st.markdown("""
+This table provides a detailed list of species that are categorized as endangered or threatened, along with the national parks where they are observed. 
+This information is crucial for understanding which species are at risk and where conservation efforts may need to be focused.
+""")
 
 # Additional Visualizations (Placeholder)
 # st.write("Add more visualizations here...")
-# Footer
-st.markdown("### Project by [Cole Petty](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
-# ---
 
 # --- Magic 8 Ball Section ---
 st.write("---")
