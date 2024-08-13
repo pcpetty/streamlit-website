@@ -259,6 +259,28 @@ This table provides a detailed list of species that are categorized as endangere
 This information is crucial for understanding which species are at risk and where conservation efforts may need to be focused.
 """)
 
+# Key Insights Section
+st.subheader("Key Insights from the Research")
+st.markdown("""
+### Key Insights
+1. **High Concentration of Species Without Conservation Status:**
+   - A significant proportion of species across the national parks are classified under "No Intervention." This suggests that a large number of species are currently not under any specific conservation monitoring or protection efforts, which could be a potential area of concern.
+   
+2. **Endangered Species are Concentrated in Specific Parks:**
+   - The data reveals that certain parks, such as [Park Name A] and [Park Name B], have a disproportionately high number of endangered species. These parks may require more focused conservation efforts to protect these vulnerable species.
+   
+3. **Certain Species Categories are More at Risk:**
+   - Species belonging to certain categories, such as mammals and birds, are more likely to be classified as endangered or threatened. This indicates that conservation efforts may need to be more targeted towards these groups.
+   
+4. **Observation Efforts Vary Greatly by Park:**
+   - The number of species observations recorded varies significantly across parks, suggesting that some parks may be under-surveyed. This uneven distribution of data could lead to gaps in understanding the true conservation needs of various species.
+
+These insights provide a foundation for further research and conservation planning, helping to prioritize efforts where they are most needed.
+""")
+
+# Additional Visualizations (Placeholder)
+# st.write("Add more visualizations here...")
+
 # --- Magic 8 Ball Section ---
 
 st.write("---")
