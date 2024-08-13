@@ -97,19 +97,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ---
-
-# --- Load CSS ---
-def local_css(file_name):
-    try:
-        with open(file_name) as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    except FileNotFoundError:
-        print(f"File not found: {file_name}")
-
-local_css("/Users/colepetty/Desktop/Python Portfolio Website/website_style/style.css")
-
-# --- Load Assets ---
+# Load Assets (Lottie Animation)
 def load_lottieurl(url: str):
     try:
         r = requests.get(url)
@@ -125,15 +113,7 @@ lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a
 if lottie_coding:
     st_lottie(lottie_coding, height=300, key="coding_animation")
 
-# --- Load Image ---
-file_path = r"/Users/colepetty/Desktop/Python Portfolio Website/images/websiteimage1.png"
-if os.path.exists(file_path):
-    img_contact_form = Image.open(file_path)
-    st.image(img_contact_form, caption="Contact Form Image")
-else:
-    print(f"File not found: {file_path}")
-
-# --- Define Magic 8 Ball Function ---
+# Define Magic 8 Ball Function
 def magic_8_ball():
     responses = [
         "Yes, definitely!",
@@ -183,7 +163,6 @@ with st.container():
         """)
         st.markdown("[View on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
 
-    # Lottie Files on right column lottiefiles.com
     with right_column:
         st_lottie(lottie_coding, height=300, key="")
 
@@ -279,6 +258,7 @@ This information is crucial for understanding which species are at risk and wher
 """)
 
 # --- Magic 8 Ball Section ---
+
 st.write("---")
 st.header("Magic 8 Ball")
 st.write("Ask the Magic 8 Ball a question and see what it predicts!")
@@ -418,6 +398,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Contact Section ---
+
 with st.container():
     st.write("---")
     st.header("Contact Me")
