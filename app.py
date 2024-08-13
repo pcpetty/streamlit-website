@@ -62,11 +62,16 @@ st.markdown("""
         margin-bottom: 20px;
     }
     /* Input Fields */
-    input, textarea {
+    input[type=email], input[type=text], textarea {
         background-color: #2b2b2b;
         color: #f5a623;
         border: 1px solid #f5a623;
         border-radius: 5px;
+        width: 100%;
+        padding: 12px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
     }
     input::placeholder, textarea::placeholder {
         color: #f5a623;
@@ -76,6 +81,19 @@ st.markdown("""
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+    /* Contact Form Button */
+    button[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button[type=submit]:hover {
+        background-color: #45a049;
+    }
+    </style>
 """, unsafe_allow_html=True)
 
 # ---
@@ -104,18 +122,15 @@ def load_lottieurl(url: str):
 
 lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a35804ce4/f89ZcyMIr8.json")
 if lottie_coding:
-    # Proceed with processing the lottie animation
-    pass
-else:
-    print("Failed to load lottie animation")
+    st_lottie(lottie_coding, height=300, key="coding_animation")
 
 # --- Load Image ---
 file_path = r"/Users/colepetty/Desktop/Python Portfolio Website/images/websiteimage1.png"
 if os.path.exists(file_path):
     img_contact_form = Image.open(file_path)
+    st.image(img_contact_form, caption="Contact Form Image")
 else:
     print(f"File not found: {file_path}")
-    img_contact_form = None  # Define as None if not found
 
 # --- Define Magic 8 Ball Function ---
 def magic_8_ball():
@@ -171,7 +186,7 @@ with st.container():
     with right_column:
         st_lottie(lottie_coding, height=300, key="")
 
-## --- Projects ---
+# --- Machine Learning Project ---
 with st.container():
     st.markdown("## 🌟 Machine Learning Project: Income Classification using Logistic Regression")
     st.write("""
@@ -188,9 +203,8 @@ with st.container():
     """)
 
     st.markdown("[View on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
-
+    
 # --- Bio Project ---
-# Title and Introduction
 st.title("Biodiversity Analysis in National Parks")
 st.markdown("""
 This project explores the biodiversity across various national parks in the United States, 
@@ -204,7 +218,6 @@ def load_data():
     observations_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/observations.csv'
     return pd.read_csv(species_url), pd.read_csv(observations_url)
 
-# Load the data
 species_df, observations_df = load_data()
 
 # Display Raw Data (Optional)
@@ -268,9 +281,6 @@ This table provides a detailed list of species that are categorized as endangere
 This information is crucial for understanding which species are at risk and where conservation efforts may need to be focused.
 """)
 
-# Additional Visualizations (Placeholder)
-# st.write("Add more visualizations here...")
-
 # --- Magic 8 Ball Section ---
 st.write("---")
 st.header("Magic 8 Ball")
@@ -281,9 +291,7 @@ if st.button("Ask the Magic 8 Ball"):
     answer = magic_8_ball()
     st.write(f"🎱 Magic 8 Ball says: **{answer}**")
 
-# --- Resume Section Master ---
-# --- Resume Section Master ---
-# Custom CSS for styling
+# --- Resume Section ---
 st.markdown("""
     <style>
     .resume-section {
@@ -408,8 +416,11 @@ st.markdown("""
             <li>Data Scientist: Analytics — Codecademy (Jun 2024) | Credential ID: 66730BDA89 | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
             <li>Learn Microsoft Excel for Data Analysis — Codecademy (Aug 2024) | Credential ID: 66B3B4DDDC | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
             <li>Learn Python 3 — Codecademy (Jun 2024) | Credential ID: 66803CD763 | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
-            <li>OSHA 10-Hour & 
-
+            <li>OSHA 10-Hour & 30-Hour Training — 360training (Jul 2023) | Credential IDs: 26-707446395, 26-907460874 | <a href="https://www.360training.com" target="_blank">View Credential</a></li>
+        </ul>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 # --- Contact Section ---
 with st.container():
@@ -432,7 +443,7 @@ with st.container():
     st.markdown(
         """
         <style>
-        input[type=message], input[type=email], input[type=text], textarea {
+        input[type=email], input[type=text], textarea {
           width: 100%; /* Full width */
           padding: 12px; /* Some padding */ 
           border: 1px solid #ccc; /* Gray border */
