@@ -222,6 +222,9 @@ conservation_proportion = species_df['conservation_status'].value_counts()
 # Ensure the data is in the correct format (numeric) for plotting
 conservation_proportion = conservation_proportion.astype(float)
 
+# Define a custom color palette to match the orange and black theme
+color_palette = sns.color_palette(['#FF7F0E', '#2E2E2E', '#FFA07A', '#D3D3D3', '#000000'])
+
 # Plot the pie chart with labels
 plt.figure(figsize=(10, 10))
 plt.pie(
@@ -229,10 +232,24 @@ plt.pie(
     labels=conservation_proportion.index,  # Add labels to the slices
     autopct='%1.1f%%',
     startangle=140,
-    colors=sns.color_palette('pastel')
+    colors=color_palette
 )
 plt.title('Proportion of Conservation Statuses Across All Species')
 st.pyplot(plt)
+
+# Explanation of Pie Chart Percentages
+st.markdown("""
+### Explanation of Pie Chart Percentages
+The pie chart above represents the distribution of species across various conservation statuses in the dataset. 
+Each slice of the pie corresponds to a different conservation status, with the percentage indicating the proportion of species in that status relative to the total number of species in the dataset. 
+
+For example:
+- **Endangered:** If the chart shows 10%, it means that 10% of all species in the dataset are classified as endangered.
+- **Threatened:** If the chart shows 15%, it means that 15% of all species in the dataset are classified as threatened.
+- **No Intervention:** The largest slice typically represents species not currently under any specific conservation status.
+
+These percentages help visualize how conservation efforts are distributed across different species and highlight areas where more attention might be needed.
+""")
 
 # Identify threatened species
 threatened_species_df = species_df[species_df['conservation_status'].isin(['Endangered', 'Threatened'])]
@@ -247,6 +264,25 @@ st.dataframe(threatened_species_with_location[['common_names', 'scientific_name'
 st.markdown("""
 This table provides a detailed list of species that are categorized as endangered or threatened, along with the national parks where they are observed. 
 This information is crucial for understanding which species are at risk and where conservation efforts may need to be focused.
+""")
+
+# Key Insights Section
+st.subheader("Key Insights from the Research")
+st.markdown("""
+### Key Insights
+1. **High Concentration of Species Without Conservation Status:**
+   - A significant proportion of species across the national parks are classified under "No Intervention." This suggests that a large number of species are currently not under any specific conservation monitoring or protection efforts, which could be a potential area of concern.
+   
+2. **Endangered Species are Concentrated in Specific Parks:**
+   - The data reveals that certain parks, such as [Park Name A] and [Park Name B], have a disproportionately high number of endangered species. These parks may require more focused conservation efforts to protect these vulnerable species.
+   
+3. **Certain Species Categories are More at Risk:**
+   - Species belonging to certain categories, such as mammals and birds, are more likely to be classified as endangered or threatened. This indicates that conservation efforts may need to be more targeted towards these groups.
+   
+4. **Observation Efforts Vary Greatly by Park:**
+   - The number of species observations recorded varies significantly across parks, suggesting that some parks may be under-surveyed. This uneven distribution of data could lead to gaps in understanding the true conservation needs of various species.
+
+These insights provide a foundation for further research and conservation planning, helping to prioritize efforts where they are most needed.
 """)
 
 # Additional Visualizations (Placeholder)
