@@ -214,31 +214,6 @@ if st.checkbox("Show Raw Data"):
     st.write("Observations DataFrame:")
     st.write(observations_df)
 
-# --- Bio Project ---
-# Title and Introduction
-st.title("Biodiversity Analysis in National Parks")
-st.markdown("""
-This project explores the biodiversity across various national parks in the United States, 
-focusing on conservation statuses and species diversity. The analysis includes data visualization, 
-model implementation, and feature engineering to uncover insights into species endangerment.
-""")
-
-@st.cache
-def load_data():
-    species_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/species_info.csv'
-    observations_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/observations.csv'
-    return pd.read_csv(species_url), pd.read_csv(observations_url)
-
-# Load the data
-species_df, observations_df = load_data()
-
-# Display Raw Data (Optional)
-if st.checkbox("Show Raw Data"):
-    st.write("Species DataFrame:")
-    st.write(species_df)
-    st.write("Observations DataFrame:")
-    st.write(observations_df)
-
 # Visualizations Section
 st.subheader("Visualizations")
 
