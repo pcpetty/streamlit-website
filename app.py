@@ -5,6 +5,7 @@ import streamlit as st
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 from streamlit_lottie import st_lottie
 import random
 
@@ -213,6 +214,31 @@ if st.checkbox("Show Raw Data"):
     st.write("Observations DataFrame:")
     st.write(observations_df)
 
+# --- Bio Project ---
+# Title and Introduction
+st.title("Biodiversity Analysis in National Parks")
+st.markdown("""
+This project explores the biodiversity across various national parks in the United States, 
+focusing on conservation statuses and species diversity. The analysis includes data visualization, 
+model implementation, and feature engineering to uncover insights into species endangerment.
+""")
+
+@st.cache
+def load_data():
+    species_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/species_info.csv'
+    observations_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/observations.csv'
+    return pd.read_csv(species_url), pd.read_csv(observations_url)
+
+# Load the data
+species_df, observations_df = load_data()
+
+# Display Raw Data (Optional)
+if st.checkbox("Show Raw Data"):
+    st.write("Species DataFrame:")
+    st.write(species_df)
+    st.write("Observations DataFrame:")
+    st.write(observations_df)
+
 # Visualizations Section
 st.subheader("Visualizations")
 
@@ -225,17 +251,18 @@ conservation_proportion = conservation_proportion.astype(float)
 # Define a custom color palette to match the orange and black theme
 color_palette = sns.color_palette(['#FF7F0E', '#2E2E2E', '#FFA07A', '#D3D3D3', '#000000'])
 
-# Plot the pie chart with labels
-plt.figure(figsize=(10, 10))
-plt.pie(
+# Plot the 3D pie chart with labels
+fig = plt.figure(figsize=(6, 4))  # Adjusted figure size for better layout
+ax = fig.add_subplot(111, projection='3d')
+ax.pie(
     conservation_proportion,
     labels=conservation_proportion.index,  # Add labels to the slices
     autopct='%1.1f%%',
     startangle=140,
     colors=color_palette
 )
-plt.title('Proportion of Conservation Statuses Across All Species')
-st.pyplot(plt)
+plt.title('Proportion of Conservation Statuses Across All Species', pad=20)
+st.pyplot(fig)
 
 # Explanation of Pie Chart Percentages
 st.markdown("""
@@ -266,25 +293,6 @@ This table provides a detailed list of species that are categorized as endangere
 This information is crucial for understanding which species are at risk and where conservation efforts may need to be focused.
 """)
 
-# Key Insights Section
-st.subheader("Key Insights from the Research")
-st.markdown("""
-### Key Insights
-1. **High Concentration of Species Without Conservation Status:**
-   - A significant proportion of species across the national parks are classified under "No Intervention." This suggests that a large number of species are currently not under any specific conservation monitoring or protection efforts, which could be a potential area of concern.
-   
-2. **Endangered Species are Concentrated in Specific Parks:**
-   - The data reveals that certain parks, such as [Park Name A] and [Park Name B], have a disproportionately high number of endangered species. These parks may require more focused conservation efforts to protect these vulnerable species.
-   
-3. **Certain Species Categories are More at Risk:**
-   - Species belonging to certain categories, such as mammals and birds, are more likely to be classified as endangered or threatened. This indicates that conservation efforts may need to be more targeted towards these groups.
-   
-4. **Observation Efforts Vary Greatly by Park:**
-   - The number of species observations recorded varies significantly across parks, suggesting that some parks may be under-surveyed. This uneven distribution of data could lead to gaps in understanding the true conservation needs of various species.
-
-These insights provide a foundation for further research and conservation planning, helping to prioritize efforts where they are most needed.
-""")
-
 # Additional Visualizations (Placeholder)
 # st.write("Add more visualizations here...")
 
@@ -303,24 +311,34 @@ if st.button("Ask the Magic 8 Ball"):
 st.markdown("""
     <style>
     .resume-section {
-        padding: 10px;
-        background-color: #f9f9f9;
-        border-radius: 5px;
+        padding: 15px;
+        background-color: #1e1e1e; /* Dark background for contrast */
+        border-radius: 8px;
+        margin-bottom: 20px;
     }
     .resume-header {
-        font-size: 30px;
+        font-size: 32px;
         font-weight: bold;
-        color: #333;
+        color: #FF7F0E; /* Orange color for header text */
+        text-align: center;
     }
     .resume-subheader {
-        font-size: 20px;
+        font-size: 22px;
         font-weight: bold;
-        color: #555;
+        color: #FF7F0E; /* Orange color for subheader text */
         margin-top: 20px;
+        text-align: left;
     }
     .resume-details {
         font-size: 16px;
-        color: #666;
+        color: #FFFFFF; /* White text for readability */
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+    .resume-details ul {
+        padding-left: 20px;
+    }
+    .resume-details li {
         margin-bottom: 10px;
     }
     .resume-projects {
@@ -329,11 +347,18 @@ st.markdown("""
     .project-title {
         font-size: 18px;
         font-weight: bold;
-        color: #444;
+        color: #FF7F0E; /* Orange color for project titles */
     }
     .project-description {
         font-size: 16px;
-        color: #666;
+        color: #FFFFFF; /* White text for readability */
+    }
+    a {
+        color: #FFA07A; /* Softer orange for links */
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
     }
     </style>
 """, unsafe_allow_html=True)
