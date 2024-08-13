@@ -199,7 +199,7 @@ model implementation, and feature engineering to uncover insights into species e
 # Load Data
 @st.cache
 def load_data():
-    return pd.read_csv('/Users/colepetty/Downloads/biodiversity_starter/species_info.csv'), pd.read_csv('/Users/colepetty/Downloads/biodiversity_starter/observations.csv')
+    return pd.read_csv('https://github.com/pcpetty/Coles-Data-Scientist-Portfolio/blob/6a1db72b79a01131e25e23b0f982d6fcbab5f6e5/species_info.csv'), pd.read_csv('https://github.com/pcpetty/Coles-Data-Scientist-Portfolio/blob/6a1db72b79a01131e25e23b0f982d6fcbab5f6e5/observations.csv')
 
 species_df, observations_df = load_data()
 
