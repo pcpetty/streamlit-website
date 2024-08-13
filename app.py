@@ -227,21 +227,16 @@ if st.checkbox("Show Raw Data"):
     st.write("Observations DataFrame:")
     st.write(observations_df)
 
-# Visualizations Section
 st.subheader("Visualizations")
 
 # Calculate the conservation status proportions
-conservation_proportion = species_df['conservation_status'].value_counts()
-
-# Ensure the data is in the correct format (numeric) for plotting
-conservation_proportion = conservation_proportion.astype(float)
+conservation_proportion = species_df['conservation_status'].value_counts().astype(float)
 
 # Define a custom color palette to match the orange and black theme
 color_palette = sns.color_palette(['#FF7F0E', '#2E2E2E', '#FFA07A', '#D3D3D3', '#000000'])
 
-# Plot the 3D pie chart with labels
-fig = plt.figure(figsize=(6, 4))  # Adjusted figure size for better layout
-ax = fig.add_subplot(111, projection='3d')
+# Plot the 2D pie chart with labels
+fig, ax = plt.subplots(figsize=(6, 6))  # Adjusted figure size for better layout
 ax.pie(
     conservation_proportion,
     labels=conservation_proportion.index,  # Add labels to the slices
@@ -257,6 +252,7 @@ st.markdown("""
 ### Explanation of Pie Chart Percentages
 The pie chart above represents the distribution of species across various conservation statuses in the dataset. 
 Each slice of the pie corresponds to a different conservation status, with the percentage indicating the proportion of species in that status relative to the total number of species in the dataset. 
+""")
 
 For example:
 - **Endangered:** If the chart shows 10%, it means that 10% of all species in the dataset are classified as endangered.
