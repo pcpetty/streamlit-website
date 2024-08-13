@@ -187,6 +187,42 @@ with st.container():
 
     st.markdown("[View on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
 
+# --- Bio Project ---
+# Title and Introduction
+st.title("Biodiversity Analysis in National Parks")
+st.markdown("""
+This project explores the biodiversity across various national parks in the United States, 
+focusing on conservation statuses and species diversity. The analysis includes data visualization, 
+model implementation, and feature engineering to uncover insights into species endangerment.
+""")
+
+# Load Data
+@st.cache
+def load_data():
+    return pd.read_csv('species_info.csv'), pd.read_csv('observations.csv')
+
+species_df, observations_df = load_data()
+
+# Display Data
+if st.checkbox("Show Raw Data"):
+    st.write(species_df)
+    st.write(observations_df)
+
+# Visualizations
+st.subheader("Visualizations")
+if st.checkbox("Show Conservation Status Proportions"):
+    conservation_proportion = species_df['conservation_status'].value_counts()
+    plt.figure(figsize=(10, 10))
+    plt.pie(conservation_proportion, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
+    plt.title('Proportion of Conservation Statuses Across All Species')
+    st.pyplot(plt)
+
+# Add more visualizations and model sections as needed
+
+# Footer
+st.markdown("### Project by [Cole Petty](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
+# ---
+
 # --- Magic 8 Ball Section ---
 st.write("---")
 st.header("Magic 8 Ball")
