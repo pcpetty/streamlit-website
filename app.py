@@ -196,10 +196,11 @@ focusing on conservation statuses and species diversity. The analysis includes d
 model implementation, and feature engineering to uncover insights into species endangerment.
 """)
 
-# Load Data
 @st.cache
 def load_data():
-    return pd.read_csv('https://github.com/pcpetty/Coles-Data-Scientist-Portfolio/blob/6a1db72b79a01131e25e23b0f982d6fcbab5f6e5/species_info.csv'), pd.read_csv('https://github.com/pcpetty/Coles-Data-Scientist-Portfolio/blob/6a1db72b79a01131e25e23b0f982d6fcbab5f6e5/observations.csv')
+    species_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/species_info.csv'
+    observations_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/observations.csv'
+    return pd.read_csv(species_url), pd.read_csv(observations_url)
 
 species_df, observations_df = load_data()
 
