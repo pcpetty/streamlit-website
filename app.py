@@ -292,7 +292,6 @@ if st.button("Ask the Magic 8 Ball"):
 st.markdown("""
     <style>
     .resume-section {
-        padding: 15px;
         background-color: #1e1e1e; /* Dark background for contrast */
         border-radius: 8px;
         margin-bottom: 20px;
