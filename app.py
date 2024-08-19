@@ -16,11 +16,13 @@ import random
 from Home import app as home_app
 from Page1 import app as page1_app
 
-# Add a top banner with navigation links
+# Add a top banner with navigation links styled to match the theme
 st.markdown("""
-    <div style="background-color:#2d2d2d;padding:10px;border-radius:5px;">
-            <a href='/' style="color:#1f77b4;">Home</a> |
-            <a href='/Page1' style="color:#1f77b4;">Page 1</a>
+    <div style="background-color:#1e1e1e;padding:10px;border-radius:5px;">
+        <h1 style="color:#f5a623;text-align:center;">Welcome to My Data Scientist Portfolio</h1>
+        <p style="color:#f5a623;text-align:center;">
+            <a href='/' style="color:#f5a623;text-decoration:none;margin-right:20px;">Home</a>
+            <a href='/Page1' style="color:#f5a623;text-decoration:none;margin-left:20px;">Page 1</a>
         </p>
     </div>
 """, unsafe_allow_html=True)
