@@ -45,15 +45,6 @@ PAGES = {
 st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", list(PAGES.keys()), key="navigation")
 
-# Display the selected page
-page = PAGES[selection]
-page()
-
-selection = st.sidebar.selectbox("Navigate to", list(PAGES.keys()))
-if selection == "Thank You":
-    from pages.ThankYou import app as thank_you_app
-    thank_you_app()
-
 # --- CSS THEME ---
 st.markdown("""
     <style>
@@ -564,7 +555,14 @@ with st.container():
         unsafe_allow_html=True
     )
 
+# Display the selected page
+page = PAGES[selection]
+page()
 
+selection = st.sidebar.selectbox("Navigate to", list(PAGES.keys()))
+if selection == "Thank You":
+    from pages.ThankYou import app as thank_you_app
+    thank_you_app()
 
 
 
