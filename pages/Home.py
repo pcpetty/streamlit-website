@@ -11,14 +11,6 @@ from mpl_toolkits.mplot3d import Axes3D
 from streamlit_lottie import st_lottie
 import random
 
-def app():
-    # Add your homepage content here
-    st.title("Welcome to My Data Scientist Portfolio")
-    st.write("This is the homepage of the portfolio.")
-
-if __name__ == '__main__':
-    app()
-
 # --- CSS THEME ---
 st.markdown("""
     <style>
