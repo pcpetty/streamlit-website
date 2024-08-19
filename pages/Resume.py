@@ -179,7 +179,6 @@ lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a
 if lottie_coding:
     st_lottie(lottie_coding, height=300, key="coding_animation")
 
-
 # --- Resume Section ---
 st.markdown("""
     <style>
