@@ -1,3 +1,8 @@
+import streamlit as st
+
+# Set page configuration here
+st.set_page_config(page_title="My Portfolio", layout="wide")
+
 import os
 import requests
 from PIL import Image
@@ -10,9 +15,6 @@ from streamlit_lottie import st_lottie
 import random
 from Home import app as home_app
 from Page1 import app as page1_app
-
-# Set page configuration here, only once
-st.set_page_config(page_title="My Portfolio", layout="wide")
 
 # Add a top banner with navigation links
 st.markdown("""
