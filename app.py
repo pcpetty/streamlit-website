@@ -510,21 +510,16 @@ with st.container():
     st.header("Contact Me")
     st.write("##")
 
-    # HTML form with POST method and JavaScript for the "Submitted" notification
+    # HTML form with POST method and redirect after submission
     contact_form = """
-    <form action="https://formsubmit.co/colepetty57@gmail.com" method="POST" onsubmit="submitForm(); return false;">
+    <form action="https://formsubmit.co/colepetty57@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://pcpetty.streamlit.app/thank_you">  <!-- Redirect URL -->
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="Your email" required>
         <textarea name="message" placeholder="Your message here" required></textarea>
         <button type="submit">Send</button>
     </form>
-    <script type="text/javascript">
-        function submitForm() {
-            document.forms[0].submit();
-            window.alert('Submitted');
-        }
-    </script>
     """
     
     st.markdown(contact_form, unsafe_allow_html=True)
@@ -565,7 +560,6 @@ with st.container():
         """,
         unsafe_allow_html=True
     )
-
 
 
 
