@@ -22,11 +22,11 @@ if __name__ == '__main__':
     app()
 
 
-# # Define the pages
-# PAGES = {
-#     "Portfolio Projects": portfolio_projects_app,
-#     "Resume": resume_app
-# }
+# Define the pages
+PAGES = {
+    "Portfolio Projects": portfolio_projects_app,
+    "Resume": resume_app
+}
 
 # selection = st.sidebar.selectbox("Navigate to", list(PAGES.keys()))
 # if selection == "Thank You":
