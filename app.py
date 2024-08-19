@@ -14,13 +14,15 @@ from Page1 import app as page1_app
 # Set page configuration here, only once
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
+# Define the pages
 PAGES = {
     "Home": home_app,
     "Page 1": page1_app
 }
 
+# Sidebar for navigation
 st.sidebar.title("Navigation")
-selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+selection = st.sidebar.radio("Go to", list(PAGES.keys()), key="navigation")
 
 # Display the selected page
 page = PAGES[selection]
@@ -31,34 +33,11 @@ st.markdown("""
     <div style="background-color:#2d2d2d;padding:10px;border-radius:5px;">
         <h1 style="color:white;text-align:center;">Welcome to My Data Scientist Portfolio</h1>
         <p style="color:white;text-align:center;">
-            <a href='https://example.com/page1' style="color:#1f77b4;">Page 1</a> |
-            <a href='https://example.com/page2' style="color:#1f77b4;">Page 2</a> |
-            <a href='https://example.com/page3' style="color:#1f77b4;">Page 3</a>
-        </p>
-    </div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-    <div style="background-color:#2d2d2d;padding:10px;border-radius:5px;">
-        <h1 style="color:white;text-align:center;">Welcome to My Data Scientist Portfolio</h1>
-        <p style="color:white;text-align:center;">
             <a href='/' style="color:#1f77b4;">Home</a> |
             <a href='/Page1' style="color:#1f77b4;">Page 1</a>
         </p>
     </div>
 """, unsafe_allow_html=True)
-
-PAGES = {
-    "Home": home_app,
-    "Page 1": page1_app
-}
-
-st.sidebar.title("Navigation")
-selection = st.sidebar.radio("Go to", list(PAGES.keys()))
-
-# Display the selected page
-page = PAGES[selection]
-page()
 
 # --- CSS THEME ---
 st.markdown("""
