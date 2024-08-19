@@ -510,14 +510,15 @@ with st.container():
     st.header("Contact Me")
     st.write("##")
 
-    # Flag to control the submission status
-    submitted = False
+    # State to manage form reset
+    if "submitted" not in st.session_state:
+        st.session_state.submitted = False
 
     # Create a form in Streamlit
     with st.form(key="contact_form"):
-        name = st.text_input("Your name")
-        email = st.text_input("Your email")
-        message = st.text_area("Your message here")
+        name = st.text_input("Your name", "" if st.session_state.submitted else st.session_state.get("name", ""))
+        email = st.text_input("Your email", "" if st.session_state.submitted else st.session_state.get("email", ""))
+        message = st.text_area("Your message here", "" if st.session_state.submitted else st.session_state.get("message", ""))
         
         submit_button = st.form_submit_button(label="Send")
         
@@ -534,13 +535,17 @@ with st.container():
             # Send the form data
             response = requests.post(form_submit_url, data=form_data)
             
-            # Mark as submitted
-            submitted = True
+            # Mark as submitted and reset fields
+            st.session_state.submitted = True
+            st.session_state.name = ""
+            st.session_state.email = ""
+            st.session_state.message = ""
 
     # Clear the form fields and display a success message if submitted
-    if submitted:
+    if st.session_state.submitted:
         st.success("Submitted")
         st.balloons()  # Optional: Adds a celebratory balloon animation
+        st.session_state.submitted = False  # Reset the form state
 
     # CSS for styling the form
     st.markdown(
@@ -578,5 +583,6 @@ with st.container():
         """,
         unsafe_allow_html=True
     )
+
 
 
