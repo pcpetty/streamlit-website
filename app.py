@@ -14,7 +14,8 @@ from mpl_toolkits.mplot3d import Axes3D
 from streamlit_lottie import st_lottie
 import random
 from Home import app as home_app
-from Page1 import app as page1_app
+from Resume import app as resume_app
+from PortfolioProjects import app as portfolio_projects_app
 
 # Add a decorative top banner with navigation links
 st.markdown("""
