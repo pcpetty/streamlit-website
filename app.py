@@ -11,6 +11,21 @@ import random
 from Home import app as home_app
 from Page1 import app as page1_app
 
+# Set page configuration here, only once
+st.set_page_config(page_title="My Portfolio", layout="wide")
+
+PAGES = {
+    "Home": home_app,
+    "Page 1": page1_app
+}
+
+st.sidebar.title("Navigation")
+selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+
+# Display the selected page
+page = PAGES[selection]
+page()
+
 # Add a top banner with navigation links
 st.markdown("""
     <div style="background-color:#2d2d2d;padding:10px;border-radius:5px;">
@@ -44,9 +59,6 @@ selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 # Display the selected page
 page = PAGES[selection]
 page()
-
-# Setting the Streamlit page configuration
-st.set_page_config(page_title="Cole's Data Scientist Portfolio", layout="wide")
 
 # --- CSS THEME ---
 st.markdown("""
