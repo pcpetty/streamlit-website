@@ -198,23 +198,23 @@ lottie_coding_2 = load_lottieurl("https://lottie.host/b62eb4cd-7f70-48de-a305-b2
 
 
 # --- What I Do ---
-# with st.container():
-#     st.write("---")
-#     left_column, right_column = st.columns(2)
-#     with left_column:
-#         st.subheader("Global EV Sales Data Analysis")
-#         st.write("""
-#         Developed a comprehensive data analysis project focused on electric vehicle (EV) sales and market trends. Utilized Python, Pandas, and Seaborn to filter, clean, and visualize data. Key achievements include:
-#         """)
-#         st.markdown("""
-#         - **Dynamic Visualizations:** Created interactive visualizations to track EV sales growth and market share by region.
-#         - **Advanced Data Cleaning:** Implemented sophisticated data cleaning techniques to handle missing values and standardize data formats.
-#         - **Trend Analysis:** Analyzed correlations between EV stock share and sales share, uncovering critical trends and insights.
-#         - **Streamlit Deployment:** Deployed the project on Streamlit, making the analysis interactive and accessible.
-#         """)
-#         st.markdown("[View on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
+with st.container():
+    st.write("---")
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.subheader("Global EV Sales Data Analysis")
+        st.write("""
+        Developed a comprehensive data analysis project focused on electric vehicle (EV) sales and market trends. Utilized Python, Pandas, and Seaborn to filter, clean, and visualize data. Key achievements include:
+        """)
+        st.markdown("""
+        - **Dynamic Visualizations:** Created interactive visualizations to track EV sales growth and market share by region.
+        - **Advanced Data Cleaning:** Implemented sophisticated data cleaning techniques to handle missing values and standardize data formats.
+        - **Trend Analysis:** Analyzed correlations between EV stock share and sales share, uncovering critical trends and insights.
+        - **Streamlit Deployment:** Deployed the project on Streamlit, making the analysis interactive and accessible.
+        """)
+        st.markdown("[View on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
 
-#     with right_column:
-#         st_lottie(lottie_coding_2, height=300, key="")
+    with right_column:
+        st_lottie(lottie_coding_2, height=300, key="")
 
 # ---
