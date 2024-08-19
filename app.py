@@ -505,22 +505,37 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Contact Section ---
-
 with st.container():
     st.write("---")
     st.header("Contact Me")
     st.write("##")
 
-    contact_form = """
-    <form action="https://formsubmit.co/colepetty57@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" placeholder="Your message here" required></textarea>
-        <button type="submit">Send</button>
-    </form>
-    """
-    st.markdown(contact_form, unsafe_allow_html=True)
+    # Create a form in Streamlit
+    with st.form(key="contact_form"):
+        name = st.text_input("Your name")
+        email = st.text_input("Your email")
+        message = st.text_area("Your message here")
+        
+        submit_button = st.form_submit_button(label="Send")
+        
+        if submit_button:
+            # Simulate form submission
+            form_submit_url = "https://formsubmit.co/colepetty57@gmail.com"
+            form_data = {
+                "name": name,
+                "email": email,
+                "message": message,
+                "_captcha": "false"
+            }
+            
+            # Send the form data
+            response = requests.post(form_submit_url, data=form_data)
+            
+            # Clear the form fields after submission
+            st.experimental_rerun()
+            
+            # Display a success message
+            st.success("Submitted")
 
     # CSS for styling the form
     st.markdown(
