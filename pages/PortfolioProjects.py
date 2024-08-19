@@ -21,6 +21,10 @@ def app():
 if __name__ == '__main__':
     app()
 
+# Display the selected page
+page = PAGES[selection]
+page()
+
 
 # Add JavaScript to ensure the page starts at the top when loaded
 st.markdown("""
