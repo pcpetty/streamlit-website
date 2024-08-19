@@ -16,7 +16,6 @@ import random
 from Home import app as home_app
 from Resume import app as resume_app
 from PortfolioProjects import app as portfolio_projects_app
-from Thankyou import app as thank_you_app
 
 # Add JavaScript to ensure the page starts at the top when loaded
 st.markdown("""
@@ -51,6 +50,11 @@ selection = st.sidebar.radio("Go to", list(PAGES.keys()), key="navigation")
 # Display the selected page
 page = PAGES[selection]
 page()
+
+selection = st.sidebar.selectbox("Navigate to", list(PAGES.keys()))
+if selection == "Thank You":
+    from pages.ThankYou import app as thank_you_app
+    thank_you_app()
 
 # --- CSS THEME ---
 st.markdown("""
