@@ -555,9 +555,6 @@ with st.container():
         unsafe_allow_html=True
     )
 
-# Display the selected page
-page = PAGES[selection]
-page()
 
 selection = st.sidebar.selectbox("Navigate to", list(PAGES.keys()))
 if selection == "Thank You":
