@@ -12,6 +12,11 @@ import random
 from Resume import app as resume_app
 from PortfolioProjects import app as portfolio_projects_app
 
+selection = st.sidebar.selectbox("Navigate to", list(PAGES.keys()))
+if selection == "Thank You":
+    from pages.ThankYou import app as thank_you_app
+    thank_you_app()
+
 # Thank You Page
 def thank_you():
     st.write("---")
