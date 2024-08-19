@@ -1,5 +1,23 @@
 
 import streamlit as st
+import os
+import requests
+from PIL import Image
+import streamlit as st
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from streamlit_lottie import st_lottie
+import random
+
+def app():
+    # Add your homepage content here
+    st.title("Welcome to My Data Scientist Portfolio")
+    st.write("This is the homepage of the portfolio.")
+
+if __name__ == '__main__':
+    app()
 
 # --- CSS THEME ---
 st.markdown("""
@@ -85,11 +103,3 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
-def app():
-    # Add your homepage content here
-    st.title("Welcome to My Data Scientist Portfolio")
-    st.write("This is the homepage of the portfolio.")
-
-if __name__ == '__main__':
-    app()
