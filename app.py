@@ -64,6 +64,19 @@ st.markdown("""
         background-color: #1e1e1e;
     }
     /* Sidebar button decoration */
+    .css-18ni7ap {
+        background-color: #f5a623 !important;
+        color: #1e1e1e !important;
+        border-radius: 5px;
+        border: none;
+        padding: 8px;
+        margin: 5px;
+    }
+    .css-18ni7ap:hover {
+        background-color: #d48c20 !important;
+        color: #ffffff !important;
+    }
+    /* Sidebar button when active */
     .stRadio > label {
         font-weight: bold;
         color: #f5a623;
