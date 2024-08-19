@@ -13,13 +13,13 @@ import random
 from Resume import app as resume_app
 from PortfolioProjects import app as portfolio_projects_app
 
-def app():
-    st.title("Portfolio Projects")
-    st.write("This page showcases the various projects I have worked on.")
-    # Add your project descriptions, images, and links here
+# def app():
+#     st.title("Portfolio Projects")
+#     st.write("This page showcases the various projects I have worked on.")
+#     # Add your project descriptions, images, and links here
 
-if __name__ == '__main__':
-    app()
+# if __name__ == '__main__':
+#     app()
 
 
 # Define the pages
