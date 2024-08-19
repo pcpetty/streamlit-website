@@ -510,6 +510,9 @@ with st.container():
     st.header("Contact Me")
     st.write("##")
 
+    # Flag to control the submission status
+    submitted = False
+
     # Create a form in Streamlit
     with st.form(key="contact_form"):
         name = st.text_input("Your name")
@@ -531,11 +534,13 @@ with st.container():
             # Send the form data
             response = requests.post(form_submit_url, data=form_data)
             
-            # Clear the form fields after submission
-            st.experimental_rerun()
-            
-            # Display a success message
-            st.success("Submitted")
+            # Mark as submitted
+            submitted = True
+
+    # Clear the form fields and display a success message if submitted
+    if submitted:
+        st.success("Submitted")
+        st.balloons()  # Optional: Adds a celebratory balloon animation
 
     # CSS for styling the form
     st.markdown(
@@ -573,3 +578,5 @@ with st.container():
         """,
         unsafe_allow_html=True
     )
+
+
