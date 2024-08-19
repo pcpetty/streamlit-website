@@ -189,8 +189,8 @@ def load_lottieurl(url: str):
     return None
 
 # lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a35804ce4/f89ZcyMIr8.json")
-if lottie_coding:
-    st_lottie(lottie_coding, height=300, key="coding_animation")
+# if lottie_coding:
+#     st_lottie(lottie_coding, height=300, key="coding_animation")
 
 lottie_coding_2 = load_lottieurl("https://lottie.host/b62eb4cd-7f70-48de-a305-b2c146d88f63/D2Xpvp7fKX.json")
 
