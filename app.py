@@ -17,6 +17,13 @@ from Home import app as home_app
 from Resume import app as resume_app
 from PortfolioProjects import app as portfolio_projects_app
 
+# Add JavaScript to ensure the page starts at the top when loaded
+st.markdown("""
+    <script>
+    window.scrollTo(0, 0);
+    </script>
+""", unsafe_allow_html=True)
+
 # Add a decorative top banner with navigation links
 st.markdown("""
     <div style="background-color:#f5a623;padding:20px;border-radius:10px;margin-bottom:20px;">
@@ -55,6 +62,22 @@ st.markdown("""
     }
     .stApp {
         background-color: #1e1e1e;
+    }
+    /* Sidebar button decoration */
+    .stRadio > label {
+        font-weight: bold;
+        color: #f5a623;
+    }
+    .stRadio > div > label > div {
+        background-color: #2b2b2b;
+        color: #f5a623;
+        padding: 8px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .stRadio > div > label > div:hover {
+        background-color: #f5a623;
+        color: #1e1e1e;
     }
     /* Headers */
     h1, h2, h3, h4, h5, h6 {
