@@ -14,11 +14,17 @@ from Page1 import app as page1_app
 # Set page configuration here, only once
 st.set_page_config(page_title="My Portfolio", layout="wide")
 
+def app():
+    st.title("Welcome to My Data Scientist Portfolio")
+    st.write("This is the homepage of the portfolio.")
+    # Add your homepage content here
+
+if __name__ == '__main__':
+    app()
+
 # Add a top banner with navigation links
 st.markdown("""
     <div style="background-color:#2d2d2d;padding:10px;border-radius:5px;">
-        <h1 style="color:white;text-align:center;">Welcome to My Data Scientist Portfolio</h1>
-        <p style="color:white;text-align:center;">
             <a href='/' style="color:#1f77b4;">Home</a> |
             <a href='/Page1' style="color:#1f77b4;">Page 1</a>
         </p>
