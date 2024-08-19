@@ -21,6 +21,12 @@ def app():
 if __name__ == '__main__':
     app()
 
+# Define the pages
+PAGES = {
+    "Portfolio Projects": portfolio_projects_app,
+    "Resume": resume_app
+}
+
 # Display the selected page
 page = PAGES[selection]
 page()
@@ -45,11 +51,6 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# Define the pages
-PAGES = {
-    "Portfolio Projects": portfolio_projects_app,
-    "Resume": resume_app
-}
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
