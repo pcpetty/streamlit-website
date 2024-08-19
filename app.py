@@ -508,7 +508,7 @@ with st.container():
     contact_form = """
     <form action="https://formsubmit.co/colepetty57@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://pcpetty.streamlit.app/thank_you">  <!-- Redirect URL -->
+        <input type="hidden" name="_next" value="https://github.com/pcpetty/streamlit-website/blob/b287deacbc9197afa34326d05f2f112acb89828b/pages/ThankYou.py">  <!-- Redirect URL -->
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="Your email" required>
         <textarea name="message" placeholder="Your message here" required></textarea>
