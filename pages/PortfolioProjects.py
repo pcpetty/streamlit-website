@@ -188,7 +188,7 @@ def load_lottieurl(url: str):
         print("Failed to parse JSON response")
     return None
 
-lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a35804ce4/f89ZcyMIr8.json")
+# lottie_coding = load_lottieurl("https://lottie.host/29566be6-b0c1-4a36-91b7-a01a35804ce4/f89ZcyMIr8.json")
 if lottie_coding:
     st_lottie(lottie_coding, height=300, key="coding_animation")
 
