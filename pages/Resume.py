@@ -1,4 +1,16 @@
 import streamlit as st
+import os
+import requests
+from PIL import Image
+import streamlit as st
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from streamlit_lottie import st_lottie
+import random
+from Resume import app as resume_app
+from PortfolioProjects import app as portfolio_projects_app
 
 def app():
     st.title("Resume")
