@@ -510,42 +510,18 @@ with st.container():
     st.header("Contact Me")
     st.write("##")
 
-    # State to manage form reset
-    if "submitted" not in st.session_state:
-        st.session_state.submitted = False
-
-    # Create a form in Streamlit
-    with st.form(key="contact_form"):
-        name = st.text_input("Your name", "" if st.session_state.submitted else st.session_state.get("name", ""))
-        email = st.text_input("Your email", "" if st.session_state.submitted else st.session_state.get("email", ""))
-        message = st.text_area("Your message here", "" if st.session_state.submitted else st.session_state.get("message", ""))
-        
-        submit_button = st.form_submit_button(label="Send")
-        
-        if submit_button:
-            # Simulate form submission
-            form_submit_url = "https://formsubmit.co/colepetty57@gmail.com"
-            form_data = {
-                "name": name,
-                "email": email,
-                "message": message,
-                "_captcha": "false"
-            }
-            
-            # Send the form data
-            response = requests.post(form_submit_url, data=form_data)
-            
-            # Mark as submitted and reset fields
-            st.session_state.submitted = True
-            st.session_state.name = ""
-            st.session_state.email = ""
-            st.session_state.message = ""
-
-    # Clear the form fields and display a success message if submitted
-    if st.session_state.submitted:
-        st.success("Submitted")
-        st.balloons()  # Optional: Adds a celebratory balloon animation
-        st.session_state.submitted = False  # Reset the form state
+    # HTML form with POST method
+    contact_form = """
+    <form action="https://formsubmit.co/colepetty57@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message here" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    """
+    
+    st.markdown(contact_form, unsafe_allow_html=True)
 
     # CSS for styling the form
     st.markdown(
@@ -583,6 +559,12 @@ with st.container():
         """,
         unsafe_allow_html=True
     )
+
+    # Success message after submission
+    if "submitted" in st.session_state and st.session_state.submitted:
+        st.success("Submitted")
+        st.session_state.submitted = False  # Reset the flag
+
 
 
 
