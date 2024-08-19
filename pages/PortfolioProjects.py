@@ -21,6 +21,11 @@ def app():
 if __name__ == '__main__':
     app()
 
+selection = st.sidebar.selectbox("Navigate to", list(PAGES.keys()))
+if selection == "Thank You":
+    from pages.ThankYou import app as thank_you_app
+    thank_you_app()
+
 # Define the pages
 PAGES = {
     "Portfolio Projects": portfolio_projects_app,
