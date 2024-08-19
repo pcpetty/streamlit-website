@@ -7,3 +7,6 @@ def thank_you():
     st.header("Thank You!")
     st.write("##")
     st.write("Your message has been successfully submitted. I will get back to you soon.")
+
+if __name__ == "__main__":
+    app()
