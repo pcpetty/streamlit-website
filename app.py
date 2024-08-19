@@ -16,6 +16,7 @@ import random
 from Home import app as home_app
 from Resume import app as resume_app
 from PortfolioProjects import app as portfolio_projects_app
+from Thankyou import app as thank_you_app
 
 # Add JavaScript to ensure the page starts at the top when loaded
 st.markdown("""
