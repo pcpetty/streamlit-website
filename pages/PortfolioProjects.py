@@ -217,4 +217,131 @@ with st.container():
     with right_column:
         st_lottie(lottie_coding_2, height=300, key="")
 
+# --- Machine Learning Project ---
+with st.container():
+    st.markdown("## 🌟 Machine Learning Project: Income Classification using Logistic Regression")
+    st.write("""
+    This project focuses on predicting whether an individual's income exceeds $50K per year using Logistic Regression.
+    The dataset used is the Census Income dataset from the UCI Machine Learning Repository.
+    
+    **Key Highlights:**
+    - **Data Preprocessing:** Implemented techniques to clean and prepare the data for model training.
+    - **Feature Engineering:** Extracted relevant features to improve model accuracy.
+    - **Model Training:** Utilized Logistic Regression to classify income levels with high accuracy.
+    - **Model Evaluation:** Assessed the model performance using accuracy, precision, recall, and F1 score.
+    
+    This project demonstrates my ability to apply machine learning techniques to solve real-world problems effectively.
+    """)
+
+    st.markdown("[View on GitHub](https://github.com/pcpetty/Coles-Data-Scientist-Portfolio.git)")
+    
+# --- Bio Project ---
+st.title("Biodiversity Analysis in National Parks")
+st.markdown("""
+This project explores the biodiversity across various national parks in the United States, 
+focusing on conservation statuses and species diversity. The analysis includes data visualization, 
+model implementation, and feature engineering to uncover insights into species endangerment.
+""")
+
+@st.cache
+def load_data():
+    species_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/species_info.csv'
+    observations_url = 'https://raw.githubusercontent.com/pcpetty/Coles-Data-Scientist-Portfolio/pcpetty-patch-1/observations.csv'
+    return pd.read_csv(species_url), pd.read_csv(observations_url)
+
+# Load the data
+species_df, observations_df = load_data()
+
+# Display Raw Data (Optional)
+if st.checkbox("Show Raw Data"):
+    st.write("Species DataFrame:")
+    st.write(species_df)
+    st.write("Observations DataFrame:")
+    st.write(observations_df)
+
+# Visualizations Section
+st.subheader("Visualizations")
+
+# Toggle to display pie chart
+# if st.checkbox("Show Conservation Status Pie Chart"):
+# Calculate the conservation status proportions
+conservation_proportion = species_df['conservation_status'].value_counts().astype(float)
+
+# Define a custom color palette to match the orange and black theme
+color_palette = sns.color_palette(['#FF7F0E', '#2E2E2E', '#FFA07A', '#D3D3D3', '#000000'])
+
+# Plot the 2D pie chart with labels
+if st.checkbox("Show Conservation Status Pie Chart"):
+    fig, ax = plt.subplots(figsize=(6, 6))  # Adjusted figure size for better layout
+    fig.patch.set_facecolor('#1e1e1e')  # Match the background color of the page
+    wedges, texts, autotexts = ax.pie(
+        conservation_proportion,
+        labels=conservation_proportion.index,  # Add labels to the slices
+        autopct='%1.1f%%',
+        startangle=140,
+        colors=color_palette
+    )
+
+    # Change the color of the percentages to white
+    for autotext in autotexts:
+        autotext.set_color('white')
+
+    plt.title('Proportion of Conservation Statuses Across All Species', pad=20, color='white')
+
+    # Add a legend outside the pie chart
+    ax.legend(wedges, conservation_proportion.index, title="Conservation Status", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1), fontsize='small')
+
+    st.pyplot(fig)
+
+# Explanation of Pie Chart Percentages
+st.markdown("""
+### Explanation of Pie Chart Percentages
+The pie chart above represents the distribution of species across various conservation statuses in the dataset. 
+Each slice of the pie corresponds to a different conservation status, with the percentage indicating the proportion of species in that status relative to the total number of species in the dataset. 
+""")
+st.markdown("""
+For example:
+- **Endangered:** If the chart shows 10%, it means that 10% of all species in the dataset are classified as endangered.
+- **Threatened:** If the chart shows 15%, it means that 15% of all species in the dataset are classified as threatened.
+- **No Intervention:** The largest slice typically represents species not currently under any specific conservation status.
+""")
+st.markdown("""
+These percentages help visualize how conservation efforts are distributed across different species and highlight areas where more attention might be needed.
+""")
+
+# Identify threatened species
+
+threatened_species_df = species_df[species_df['conservation_status'].isin(['Endangered', 'Threatened'])]
+
+# Merge with observations to get location data
+threatened_species_with_location = pd.merge(threatened_species_df, observations_df, on='scientific_name')
+
+# Display threatened species and their locations
+st.subheader("List of Threatened Species and Their Locations")
+st.dataframe(threatened_species_with_location[['common_names', 'scientific_name', 'category', 'conservation_status', 'park_name', 'observations']])
+
+st.markdown("""
+This table provides a detailed list of species that are categorized as endangered or threatened, along with the national parks where they are observed. 
+This information is crucial for understanding which species are at risk and where conservation efforts may need to be focused.
+""")
+
+# Key Insights Section
+st.subheader("Key Insights from the Research")
+st.markdown("""
+### Key Insights
+1. **High Concentration of Species Without Conservation Status:**
+   - A significant proportion of species across the national parks are classified under "No Intervention." This suggests that a large number of species are currently not under any specific conservation monitoring or protection efforts, which could be a potential area of concern.
+   
+2. **Endangered Species are Concentrated in Specific Parks:**
+   - The data reveals that certain parks, such as [Park Name A] and [Park Name B], have a disproportionately high number of endangered species. These parks may require more focused conservation efforts to protect these vulnerable species.
+   
+3. **Certain Species Categories are More at Risk:**
+   - Species belonging to certain categories, such as mammals and birds, are more likely to be classified as endangered or threatened. This indicates that conservation efforts may need to be more targeted towards these groups.
+   
+4. **Observation Efforts Vary Greatly by Park:**
+   - The number of species observations recorded varies significantly across parks, suggesting that some parks may be under-surveyed. This uneven distribution of data could lead to gaps in understanding the true conservation needs of various species.
+
+These insights provide a foundation for further research and conservation planning, helping to prioritize efforts where they are most needed.
+""")
+
 # ---
