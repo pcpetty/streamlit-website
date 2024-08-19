@@ -12,6 +12,35 @@ import random
 from Resume import app as resume_app
 from PortfolioProjects import app as portfolio_projects_app
 
+# Add JavaScript to ensure the page starts at the top when loaded
+st.markdown("""
+    <script>
+    window.scrollTo(0, 0);
+    </script>
+""", unsafe_allow_html=True)
+
+# Add a decorative top banner with navigation links
+st.markdown("""
+    <div style="background-color:#f5a623;padding:20px;border-radius:10px;margin-bottom:20px;">
+        <h1 style="color:#1e1e1e;text-align:center;font-weight:800;">Cole's Data Science Portfolio</h1>
+        <p style="text-align:center;">
+            <a href='/' style="color:#1e1e1e;font-weight:bold;margin-right:40px;text-decoration:none;">Home</a>
+            <a href='/PortfolioProjects' style="color:#1e1e1e;font-weight:bold;margin-right:40px;text-decoration:none;">Portfolio Projects</a>
+            <a href='/Resume' style="color:#1e1e1e;font-weight:bold;text-decoration:none;">Resume</a>
+        </p>
+    </div>
+""", unsafe_allow_html=True)
+
+# Define the pages
+PAGES = {
+    "Portfolio Projects": portfolio_projects_app,
+    "Resume": resume_app
+}
+
+# Sidebar for navigation
+st.sidebar.title("Navigation")
+selection = st.sidebar.radio("Go to", list(PAGES.keys()), key="navigation")
+
 def app():
     st.title("Resume")
     st.write("This page contains my professional resume.")
