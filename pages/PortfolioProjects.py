@@ -182,8 +182,6 @@ if lottie_coding:
     st_lottie(lottie_coding, height=300, key="coding_animation")
 
 lottie_coding_2 = load_lottieurl("https://lottie.host/embed/b62eb4cd-7f70-48de-a305-b2c146d88f63/D2Xpvp7fKX.json")
-if lottie_coding:
-    st_lottie(lottie_coding, height=300, key="coding_animation")
 
 
 
