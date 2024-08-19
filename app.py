@@ -97,6 +97,23 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Add a top banner with navigation links
+st.markdown("""
+    <div style="background-color:#2d2d2d;padding:10px;border-radius:5px;">
+        <h1 style="color:white;text-align:center;">Welcome to My Data Scientist Portfolio</h1>
+        <p style="color:white;text-align:center;">
+            <a href='https://example.com/page1' style="color:#1f77b4;">Page 1</a> |
+            <a href='https://example.com/page2' style="color:#1f77b4;">Page 2</a> |
+            <a href='https://example.com/page3' style="color:#1f77b4;">Page 3</a>
+        </p>
+    </div>
+""", unsafe_allow_html=True)
+
+# Adding a new section to the app
+st.header("New Section: Data Insights")
+st.write("In this section, we explore the latest insights from the dataset.")
+# You can add more content here, like plots, tables, etc.
+
 # Load Assets (Lottie Animation)
 def load_lottieurl(url: str):
     try:
