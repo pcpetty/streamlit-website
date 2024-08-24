@@ -234,76 +234,87 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<div class="resume-section">
-    <div class="resume-header">
-        Cole Petty
-    </div>
-    <div class="resume-details">
-        Columbus, OH 43212 | (740) 525-3738 | colepetty57@gmail.com | <a href="https://linkedin.com/in/cole-petty-095027121" target="_blank">LinkedIn</a>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+import streamlit as st
 
-# Skills Section
-st.markdown("""
-<div class="resume-section">
-    <div class="resume-subheader">Skills</div>
-    <div class="resume-details">
-        <ul>
-            <li><strong>Data Science Skills:</strong> Python, SQL, Pandas, NumPy, Matplotlib, Seaborn, Machine Learning (Scikit-learn), Data Cleaning, Data Visualization</li>
-            <li><strong>Active Listening:</strong> Developed and maintained relationships company-wide to find and resolve safety issues.</li>
-            <li><strong>Adaptability:</strong> Ability to respond quickly to changing trends, processes, and approaches to project goals.</li>
-            <li><strong>Transportation Systems:</strong> Utilize software and technology to optimize fleet management and compliance.</li>
-            <li><strong>Customer Service:</strong> Coordinated with vendors and customers to ensure timely completion of work orders.</li>
-            <li><strong>Warehousing and Storage:</strong> Ensured goods are stored and handled safely and efficiently.</li>
-        </ul>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+st.title("Cole Petty's Data Analyst Resume")
 
-# Experience Section
-st.markdown("""
-<div class="resume-section">
-    <div class="resume-subheader">Experience</div>
-    <div class="resume-details">
-        <strong>Forward Air, Groveport, OH</strong> — Safety Generalist (03/2022 - Present)
-        <ul>
-            <li>Maintains fleet compliance and sustains the company’s safety rating with FMCSA.</li>
-            <li>Documents and reviews all accidents and incidents using strong analytical skills.</li>
-            <li>Manages multiple projects independently and handles high-stress situations efficiently.</li>
-        </ul>
-        <strong>Forward Air Solutions, Lockbourne, OH</strong> — Operations Manager (08/2020 - 02/2022)
-        <ul>
-            <li>Streamlined operations, reducing warehouse labor costs by 25%.</li>
-            <li>Maintained an inventory accuracy of 89% by implementing a 3-factor freight verification process.</li>
-        </ul>
-        <strong>Scioto Services, Columbus, OH</strong> — Account Manager (07/2019 - 08/2020)
-        <ul>
-            <li>Managed a monthly budget of $15,000 to supply and upkeep a major corporate office.</li>
-            <li>Oversaw the daily planning of 22 associates and 2 shift supervisors.</li>
-        </ul>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+st.subheader("Contact Information")
+st.write("""
+**Location:** Columbus, OH 43212  
+**Phone:** (740) 525-3738  
+**Email:** colepetty57@gmail.com  
+[LinkedIn Profile](https://linkedin.com/in/cole-petty-095027121)
+""")
 
-# Education Section
+st.subheader("Professional Summary")
+st.write("""
+Detail-oriented Data Analyst with strong proficiency in Python, Excel, SQL, and data visualization tools such as Power BI and Tableau. Equipped with hands-on experience in data wrangling, cleaning, and analysis, coupled with a solid foundation in business operations and management. Adept at leveraging data to drive decision-making and improve operational efficiency. Recently certified in key data analytics and machine learning courses, showcasing a commitment to ongoing learning and development in the field. Seeking to apply analytical skills and data-driven insights to contribute to a dynamic team.
+""")
+
+st.subheader("Skills")
+st.write("""
+- **Programming Languages:** Python (Pandas, NumPy, Matplotlib, Scikit-learn)
+- **Data Visualization:** Power BI, Tableau, Matplotlib, Seaborn
+- **Data Analysis:** Excel (Advanced Functions, Pivot Tables), SQL, Data Wrangling, Data Cleaning, Data Mining
+- **Machine Learning:** Logistic Regression, Decision Trees, Random Forest, Model Evaluation
+- **Tools & Technologies:** Jupyter Notebook, VSCode, Git, Docker
+- **Business Skills:** Strategic Planning, Budget Management, Operations Management
+""")
+
+st.subheader("Certifications")
+st.write("""
+- **Data Scientist Certification** – Codecademy
+- **Machine Learning Certification** – Codecademy
+- **Python 3 Certification** – Codecademy
+- **Data Analysis & Excel Certification** – Codecademy
+- **Business Intelligence Certification** – Codecademy
+""")
+
+st.subheader("Professional Experience")
+
 st.markdown("""
-<div class="resume-section">
-    <div class="resume-subheader">Education and Certifications</div>
-    <div class="resume-details">
-        <strong>Ohio Wesleyan University, Delaware, OH</strong> — Bachelor of Arts Degree (2019)
-        <ul>
-            <li>Majors: Business Administration and Psychology (Organizational Behavior)</li>
-        </ul>
-        <strong>Certifications:</strong>
-        <ul>
-            <li>Data Scientist: Machine Learning — Codecademy (Aug 2024) | Credential ID: 66B22DB05A | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
-            <li>Data Scientist: Analytics — Codecademy (Jun 2024) | Credential ID: 66730BDA89 | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
-            <li>Learn Microsoft Excel for Data Analysis — Codecademy (Aug 2024) | Credential ID: 66B3B4DDDC | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
-            <li>Learn Python 3 — Codecademy (Jun 2024) | Credential ID: 66803CD763 | <a href="https://www.codecademy.com" target="_blank">View Credential</a></li>
-            <li>OSHA 10-Hour & 30-Hour Training — 360training (Jul 2023) | Credential IDs: 26-707446395, 26-907460874 | <a href="https://www.360training.com" target="_blank">View Credential</a></li>
-        </ul>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+**Safety Generalist (3 years)**  
+*Forward Air, Groveport, OH | March 2019 – Present*
+- Demonstrated reliability and consistency by maintaining fleet compliance with company and FMCSA standards for three consecutive years, contributing to sustained high safety ratings.
+- Employed data-driven approaches to analyze accident and incident reports, improving documentation accuracy and reducing incident recurrence by 15%.
+- Successfully managed multiple high-stress projects independently and within teams, optimizing safety protocols through data analysis.
+
+**Operations Manager**  
+*Forward Air Solutions, Lockbourne, OH | August 2020 – February 2022*
+- Led a warehouse team to develop and implement process improvements, reducing labor costs by 25% through data-driven decision-making.
+- Maintained an inventory accuracy of 89% by implementing a 3-factor verification process, minimizing lost and damaged freight.
+- Used data analysis to identify inefficiencies and propose operational changes, directly improving service delivery and customer satisfaction.
+
+**Account Manager**  
+*Scioto Services, Columbus, OH | July 2019 – August 2020*
+- Managed a monthly budget of $15,000 for a major corporate office, using financial data to optimize spending and reduce waste.
+- Oversaw a team of 24 associates, using workforce analytics to ensure efficient staff deployment and operational coverage.
+- Assisted in strategic territory development, leveraging data insights to expand service reach and client satisfaction.
+""")
+
+st.subheader("Education")
+st.write("""
+**Bachelor of Arts in Business Administration & Psychology**  
+*Ohio Wesleyan University, Delaware, OH | 2019*  
+Majors: Business Administration (Management), Psychology (Organizational Behavior)  
+**OSHA 10 & 30 Hour Training Certification** – General Industry | 2023
+""")
+
+st.subheader("Projects")
+
+st.markdown("""
+**Endangered Species Analysis in National Parks**  
+- Conducted a comprehensive data analysis project using Python to identify patterns in endangered species across U.S. national parks.
+- Utilized data wrangling, cleaning, and visualization techniques to present findings, demonstrating the ability to derive actionable insights from large datasets.
+- Project showcased in a Jupyter Notebook with clear documentation and visualizations, designed to communicate findings effectively to non-technical stakeholders.
+
+**Credit Card Fraud Detection Using Logistic Regression**  
+- Developed a machine learning model in Python to predict credit card fraud, achieving a high accuracy rate using logistic regression.
+- The project involved data preprocessing, feature selection, model training, and evaluation, with results presented in a professional format.
+
+**Wine Quality Analysis with Regularization**  
+- Conducted a detailed analysis of wine quality datasets, employing regularization techniques such as Ridge and Lasso to prevent overfitting.
+- Utilized Python and Scikit-learn to preprocess data, select features, and build predictive models that accurately classified wine quality.
+- Presented findings in a comprehensive report, including visualizations that highlighted the impact of different regularization methods on model performance.
+""")
+
