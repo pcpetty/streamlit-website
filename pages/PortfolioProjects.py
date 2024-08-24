@@ -345,3 +345,22 @@ These insights provide a foundation for further research and conservation planni
 """)
 
 # ---
+
+st.subheader("Projects")
+
+st.markdown("""
+**Endangered Species Analysis in National Parks**  
+- Conducted a comprehensive data analysis project using Python to identify patterns in endangered species across U.S. national parks.
+- Utilized data wrangling, cleaning, and visualization techniques to present findings, demonstrating the ability to derive actionable insights from large datasets.
+- Project showcased in a Jupyter Notebook with clear documentation and visualizations, designed to communicate findings effectively to non-technical stakeholders.
+
+**Credit Card Fraud Detection Using Logistic Regression**  
+- Developed a machine learning model in Python to predict credit card fraud, achieving a high accuracy rate using logistic regression.
+- The project involved data preprocessing, feature selection, model training, and evaluation, with results presented in a professional format.
+
+**Wine Quality Analysis with Regularization**  
+- Conducted a detailed analysis of wine quality datasets, employing regularization techniques such as Ridge and Lasso to prevent overfitting.
+- Utilized Python and Scikit-learn to preprocess data, select features, and build predictive models that accurately classified wine quality.
+- Presented findings in a comprehensive report, including visualizations that highlighted the impact of different regularization methods on model performance.
+""")
+
