@@ -217,6 +217,46 @@ with st.container():
     with right_column:
         st_lottie(lottie_coding_2, height=300, key="")
 
+
+# ---- FoodWheel Project
+
+import streamlit as st
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the data
+df_cleveland = pd.read_csv('cleveland.csv')
+df_orders = pd.read_csv('orders.csv')
+df_restaurants = pd.read_csv('restaurants.csv')
+
+# Cleveland Heart Disease Data Analysis
+st.title("Cleveland Heart Disease Analysis")
+
+st.write("### Data Overview")
+st.dataframe(df_cleveland.head())
+
+# Example Visualization: Boxplot for the 'num' column
+st.write("### Boxplot of Heart Disease Diagnosis (num)")
+plt.figure(figsize=(10, 6))
+sns.boxplot(y='num', data=df_cleveland)
+st.pyplot(plt)
+
+# Analysis of Orders and Restaurants Data
+st.title("FoodWheel Analysis")
+
+st.write("### Orders Data Overview")
+st.dataframe(df_orders.head())
+
+st.write("### Restaurants Data Overview")
+st.dataframe(df_restaurants.head())
+
+# Correlation heatmap of Orders
+st.write("### Correlation Heatmap of Orders")
+plt.figure(figsize=(12, 8))
+sns.heatmap(df_orders.corr(), annot=True, cmap='coolwarm')
+st.pyplot(plt)
+
 # --- Machine Learning Project ---
 with st.container():
     st.markdown("## 🌟 Machine Learning Project: Income Classification using Logistic Regression")
