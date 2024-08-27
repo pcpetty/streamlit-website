@@ -218,39 +218,39 @@ with st.container():
         st_lottie(lottie_coding_2, height=300, key="")
 
 
-# ---- FoodWheel Project
+# # ---- FoodWheel Project
 
-import streamlit as st
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
+# import streamlit as st
+# import pandas as pd
+# import seaborn as sns
+# import matplotlib.pyplot as plt
 
-# Load CSV files from GitHub
-orders_url = "https://github.com/pcpetty/streamlit-website/blob/master/pages/orders.csv"
-restaurants_url = "https://github.com/pcpetty/streamlit-website/blob/master/pages/restaurants.csv"
+# # Load CSV files from GitHub
+# orders_url = "https://github.com/pcpetty/streamlit-website/blob/master/pages/orders.csv"
+# restaurants_url = "https://github.com/pcpetty/streamlit-website/blob/master/pages/restaurants.csv"
 
-df_orders = pd.read_csv(orders_url)
-df_restaurants = pd.read_csv(restaurants_url)
+# df_orders = pd.read_csv(orders_url)
+# df_restaurants = pd.read_csv(restaurants_url)
 
-st.write("### Boxplot of Cuisines")
-plt.figure(figsize=(10, 6))
-sns.boxplot(y='num', data=df_orders)
-st.pyplot(plt)
+# st.write("### Boxplot of Cuisines")
+# plt.figure(figsize=(10, 6))
+# sns.boxplot(y='num', data=df_orders)
+# st.pyplot(plt)
 
-# Analysis of Orders and Restaurants Data
-st.title("FoodWheel Analysis")
+# # Analysis of Orders and Restaurants Data
+# st.title("FoodWheel Analysis")
 
-st.write("### Orders Data Overview")
-st.dataframe(df_orders.head())
+# st.write("### Orders Data Overview")
+# st.dataframe(df_orders.head())
 
-st.write("### Restaurants Data Overview")
-st.dataframe(df_restaurants.head())
+# st.write("### Restaurants Data Overview")
+# st.dataframe(df_restaurants.head())
 
-# Example Visualization: Correlation heatmap of Orders
-st.write("### Correlation Heatmap of Orders")
-plt.figure(figsize=(12, 8))
-sns.heatmap(df_orders.corr(), annot=True, cmap='coolwarm')
-st.pyplot(plt)
+# Correlation heatmap of Orders
+# st.write("### Correlation Heatmap of Orders")
+# plt.figure(figsize=(12, 8))
+# sns.heatmap(df_orders.corr(), annot=True, cmap='coolwarm')
+# st.pyplot(plt)
 
 # --- Machine Learning Project ---
 with st.container():
