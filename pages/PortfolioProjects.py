@@ -226,8 +226,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Load CSV files from GitHub
-orders_url = "https://github.com/pcpetty/streamlit-website/blob/0e355db7373f6798e11a32d366b0a323d4968066/pages/orders.csv"
-restaurants_url = "https://github.com/pcpetty/streamlit-website/blob/0e355db7373f6798e11a32d366b0a323d4968066/pages/restaurants.csv"
+orders_url = "https://github.com/pcpetty/streamlit-website/blob/master/pages/orders.csv"
+restaurants_url = "https://github.com/pcpetty/streamlit-website/blob/master/pages/restaurants.csv"
 
 df_orders = pd.read_csv(orders_url)
 df_restaurants = pd.read_csv(restaurants_url)
